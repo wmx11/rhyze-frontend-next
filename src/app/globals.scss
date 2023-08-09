@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --border-radius: 23px;
+
+  --content: 30 45% 14%;
+
+  --primary: 216 73% 44%; //*Dark blue*/
+  --primary-focus: 244 44% 33%;
+
+  --secondary: 41 89% 62%; /*Light Yellow*/
+  --secondary-focus: 317 80% 54%;
+
+  --accent: 191 53% 55%; /*Light blue*/
+  --accent-focus: 177 66% 69%;
+
+  --black: 184 60% 5%;
+
+  /* Custom colors */
+  --light-sand: var(--secondary);
+  --dark-sand: 29 44% 74%;
+  --dark-ocean: var(--primary);
+  --light-ocean: var(--accent);
+  --rhyze-red: 0 100% 41%;
+  --dark-wet-sand: var(--content);
+}
+
+
+a:hover {
+  text-decoration: underline;
+}
+
+.animate {
+  opacity: 0;
+}
+
+nav {
+  transition: 0.2s ease;
+
+  &.open {
+    height: 60%;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(25px) rotate(12deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+@keyframes float_2 {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(15px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(5px) rotate(-1deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.float {
+  animation: float 7s ease infinite;
+
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) {
+      animation-delay: 800ms * $i;
+    }
+  }
+}
+
+.float_2 {
+  animation: float_2 7s ease infinite;
+
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) {
+      animation-delay: 800ms * $i;
+    }
+  }
+}
+
+/* Override Terms Hub Cookie Banner styles */
+.th-button {
+  border-radius: var(--border-radius) !important;
+  margin-bottom: 8px !important;
+}
