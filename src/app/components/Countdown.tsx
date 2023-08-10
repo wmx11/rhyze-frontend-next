@@ -12,7 +12,7 @@ const Countdown = () => {
   const [hasStarted, setHasStarted] = useState(false);
 
   const targetTime = new Date(
-    Date.UTC(2023, 7, 13, 2, 0, 0, 0)
+    Date.UTC(2023, 7, 13, 14, 0, 0, 0)
   ) as unknown as number;
 
   const checkTime = () => {
