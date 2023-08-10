@@ -45,11 +45,11 @@ const RaffleAdminPage = () => {
   // }
 
   return (
-    <>
+    <div>
       <Stats />
       <Controls />
       <Charts />
-    </>
+    </div>
   );
 };
 

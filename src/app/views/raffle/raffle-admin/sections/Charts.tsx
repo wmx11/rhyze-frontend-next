@@ -31,8 +31,8 @@ ChartJS.register(
   Colors
 );
 
-ChartJS.defaults.borderColor = '#ffffff20';
-ChartJS.defaults.color = '#fff';
+ChartJS.defaults.borderColor = '#1E5EC020';
+ChartJS.defaults.color = '#1E5EC0';
 
 const Charts = () => {
   const chartOptions: ChartOptions<'line'> = {

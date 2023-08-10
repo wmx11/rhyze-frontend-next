@@ -10,7 +10,7 @@ const ShortStory = () => {
     <>
       <Section className="bg-dark-sand min-h-screen flex items-center relative">
         <Container>
-          <div className="mx-auto max-w-xl text-lg text-center font-bold animate">
+          <div className="mx-auto max-w-xl text-2xl text-center font-bold animate">
             <p>
               The summer is here and Rhyze is bringing the sunshine! We have
               been hard at work blending together DeFi protocols and proven

@@ -71,18 +71,26 @@ const Hero = () => {
   };
 
   return (
-    <section>
+    <section className="relative">
       <HeroWrapper className="items-center justify-center relative pb-24">
-        <div className="p-10 relative">
-          <div className="mb-16 space-y-16 flex flex-col max-w-xl mx-auto text-center">
+        <div className="absolute bg-neutral rounded-full top-0 z-10">
+          <div className="ray ray-1"></div>
+          <div className="ray ray-2"></div>
+          <div className="ray ray-3"></div>
+          <div className="ray ray-4"></div>
+        </div>
+        <div className="p-10 relative ">
+          <div className="mb-16 space-y-16 flex flex-col max-w-xl mx-auto text-center ">
             <H1 className="animate !text-7xl z-10 relative">
               Catch the raffle wave!
             </H1>
             <Dialog>
               <DialogTrigger>
-                <button className="btn btn-primary btn-lg text-white font-bold animate btn-block z-10 relative">
-                  Enter the raffle
-                </button>
+                <div className="flex justify-center relative">
+                  <button className="btn btn-primary btn-lg text-white font-bold animate btn-block z-10 relative hover:shadow-[0px_0px_30px_hsl(var(--primary))] shadow-[0px_0px_15px_hsl(var(--primary))]">
+                    Enter the raffle
+                  </button>
+                </div>
               </DialogTrigger>
               <DialogContent>
                 <DialogHeader>

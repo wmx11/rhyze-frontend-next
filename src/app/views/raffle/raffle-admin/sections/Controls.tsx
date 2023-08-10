@@ -20,68 +20,70 @@ const Controls = () => {
         <div className="grid grid-cols md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
           <Card>
             <CardHeader>Create New Raffle</CardHeader>
-            <div className="space-y-4">
-              <div className="form-control w-full">
-                <label className="label">
-                  <span className="label-text text-white">Price</span>
-                </label>
-                <input
-                  type="number"
-                  placeholder="Enter price"
-                  className="input input-bordered w-full text-neutral"
-                  value={price}
-                  onChange={(e) =>
-                    setPrice(parseInt(e.currentTarget.value, 10))
-                  }
-                />
-              </div>
-              <div className="form-control w-full">
-                <label className="label">
-                  <span className="label-text text-white">Minium Pot</span>
-                </label>
-                <input
-                  type="number"
-                  placeholder="Enter minimum pot"
-                  className="input input-bordered w-full text-neutral"
-                  value={minPot}
-                  onChange={(e) =>
-                    setMinPot(parseInt(e.currentTarget.value, 10))
-                  }
-                />
-              </div>
-              <div className="form-control w-full">
-                <label className="label">
-                  <span className="label-text text-white">
-                    Number of Winners
-                  </span>
-                </label>
-                <input
-                  type="number"
-                  placeholder="Enter number of winners"
-                  className="input input-bordered w-full text-neutral"
-                  value={numberOfWinners}
-                  onChange={(e) =>
-                    setNumberOfWinners(parseInt(e.currentTarget.value, 10))
-                  }
-                />
-              </div>
-              <div className="form-control w-full">
-                <label className="label">
-                  <span className="label-text text-white">
-                    Can the same wallet win multiple times?
-                  </span>
-                </label>
-                <select
-                  className="select select-bordered text-neutral"
-                  value={canWinMultipleTimes}
-                  onChange={(e) => setCanWinMultipleTimes(e.currentTarget.value)}
-                >
-                  <option disabled selected>
-                    Select Yes or No
-                  </option>
-                  <option value="true">Yes</option>
-                  <option value="false">No</option>
-                </select>
+            <div>
+              <div className="mb-4">
+                <div className="form-control w-full">
+                  <label className="label">
+                    <span className="label-text">Price</span>
+                  </label>
+                  <input
+                    type="number"
+                    placeholder="Enter price"
+                    className="input input-bordered w-full text-neutral"
+                    value={price}
+                    onChange={(e) =>
+                      setPrice(parseInt(e.currentTarget.value, 10))
+                    }
+                  />
+                </div>
+                <div className="form-control w-full">
+                  <label className="label">
+                    <span className="label-text">Minium Pot</span>
+                  </label>
+                  <input
+                    type="number"
+                    placeholder="Enter minimum pot"
+                    className="input input-bordered w-full text-neutral"
+                    value={minPot}
+                    onChange={(e) =>
+                      setMinPot(parseInt(e.currentTarget.value, 10))
+                    }
+                  />
+                </div>
+                <div className="form-control w-full">
+                  <label className="label">
+                    <span className="label-text">Number of Winners</span>
+                  </label>
+                  <input
+                    type="number"
+                    placeholder="Enter number of winners"
+                    className="input input-bordered w-full text-neutral"
+                    value={numberOfWinners}
+                    onChange={(e) =>
+                      setNumberOfWinners(parseInt(e.currentTarget.value, 10))
+                    }
+                  />
+                </div>
+                <div className="form-control w-full">
+                  <label className="label">
+                    <span className="label-text">
+                      Can the same wallet win multiple times?
+                    </span>
+                  </label>
+                  <select
+                    className="select select-bordered text-neutral"
+                    value={canWinMultipleTimes}
+                    onChange={(e) =>
+                      setCanWinMultipleTimes(e.currentTarget.value)
+                    }
+                  >
+                    <option disabled selected>
+                      Select Yes or No
+                    </option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                  </select>
+                </div>
               </div>
               <button className="btn btn-warning btn-block">Create</button>
             </div>

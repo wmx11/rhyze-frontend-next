@@ -9,7 +9,7 @@ const Card: FC<PropsWithChildren & HTMLAttributes<HTMLBaseElement>> = ({
   return (
     <div
       className={twMerge(
-        'card bg-dark-wet-sand text-white space-y-4 p-6 min-h-[200px] flex-1 shadow-md',
+        'card border border-dark-wet-sand/40 backdrop-blur-sm space-y-4 p-6 min-h-[200px] flex-1 shadow-lg hover:scale-[1.01] transition-transform',
         className
       )}
     >

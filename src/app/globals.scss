@@ -131,6 +131,36 @@ nav {
   }
 }
 
+
+  .ray {  
+    position: absolute;
+    background: linear-gradient(to left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%); 
+    opacity: 0.5;
+    width: 1000px;
+    height: 80px;
+
+    &-1 {
+      transform: rotate(45deg);
+      left:0;
+      top:0;
+    }
+    &-2 {
+      transform: rotate(50deg);
+      left:-50px;
+      top:0;
+    }
+    &-3 {
+      transform: rotate(-50deg);
+      right:50px;
+      top:0;
+    }
+    &-4 {
+      transform: rotate(-45deg);
+      right:0;
+      top:0;
+    }
+}
+
 /* Override Terms Hub Cookie Banner styles */
 .th-button {
   border-radius: var(--border-radius) !important;
