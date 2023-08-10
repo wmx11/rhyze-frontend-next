@@ -29,19 +29,20 @@ const RaffleAdminPage = () => {
     );
   }
 
-  if (!config.adminWallets.includes(account)) {
-    return (
-      <>
-        <Section className="min-h-screen flex items-center justify-center">
-          <Container>
-            <div className="max-w-xl mx-auto text-center space-y-8">
-              <H2>You do not have permission to view this page</H2>
-            </div>
-          </Container>
-        </Section>
-      </>
-    );
-  }
+  // Uncomment this when going to prod
+  // if (!config.adminWallets.includes(account)) {
+  //   return (
+  //     <>
+  //       <Section className="min-h-screen flex items-center justify-center">
+  //         <Container>
+  //           <div className="max-w-xl mx-auto text-center space-y-8">
+  //             <H2>You do not have permission to view this page</H2>
+  //           </div>
+  //         </Container>
+  //       </Section>
+  //     </>
+  //   );
+  // }
 
   return (
     <>
