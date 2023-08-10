@@ -5,18 +5,23 @@ import navigation from '../utils/navigation';
 import Container from './Container';
 import Logo from './Logo';
 import Link from 'next/link';
+import { useAddress, useDisconnect } from '@thirdweb-dev/react';
+import { useToast } from '../ui/components/ui/use-toast';
 
 const Navigation = () => {
+  const address = useAddress();
+  const disconnect = useDisconnect();
+  const { toast } = useToast();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav
-      className={`bg-secondary bg-[url('/noise.png')] fixed bottom-0 border-t border-t-dark-wet-sand md:sticky md:top-0 z-20 py-2 w-full h-[61px] md:h-auto ${
+      className={`bg-secondary bg-[url('/noise.png')] py-2 fixed bottom-0 border-t border-t-dark-wet-sand md:sticky md:top-0 z-20 w-full h-[61px] md:h-auto ${
         isOpen ? 'open' : ''
       }`}
     >
-      <Container className="flex flex-col md:flex-row md:justify-between text-right md:text-left">
-        <div className="flex absolute md:relative top-[20px] md:top-0 left-[22px] md:left-0 md:flex-1">
+      <Container className="flex flex-col md:items-center md:flex-row md:justify-between text-right md:text-left">
+        <div className="flex items-center absolute md:relative gap-4 top-[20px] md:top-0 left-[22px] md:left-0 md:flex-1">
           <Link
             href="/"
             className="block w-auto"
@@ -24,6 +29,23 @@ const Navigation = () => {
           >
             <Logo />
           </Link>
+          {address && (
+            <div>
+              <button
+                className="btn btn-outline btn-xs text-xs"
+                onClick={() => {
+                  disconnect();
+                  toast({
+                    title: 'Disconnected',
+                    description:
+                      'You have successfully disconnected your wallet',
+                  });
+                }}
+              >
+                Disconnect
+              </button>
+            </div>
+          )}
         </div>
         <div className="pt-16 md:pt-0">
           <ul className="flex flex-col md:flex-row gap-8 [&>li]:font-bold">
@@ -75,9 +97,9 @@ const Navigation = () => {
           stroke="currentColor"
         >
           <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
             d="M4 6h16M4 12h16M4 18h16"
           ></path>
         </svg>

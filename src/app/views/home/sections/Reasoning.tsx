@@ -5,12 +5,14 @@ import TextBlockContainer from '@/app/components/TextBlockContainer';
 import Image from 'next/image';
 import React from 'react';
 import Reef from '../../../../../public/assets/reef.png';
+import Flippers from '../../../../../public/assets/flippers.png';
+import Beachball from '../../../../../public/assets/beachball.png';
 
 const Reasoning = () => {
   return (
     <>
       <Section className="relative bg-primary">
-        <Container>
+        <Container className="z-10 relative">
           <TextBlockContainer>
             <TextBlock h1="When and how can I buy Rhyze tokens?">
               We will have a fair launch 🤝🚀 on/near August the 13th. The Rhyze
@@ -35,19 +37,19 @@ const Reasoning = () => {
             </TextBlock>
           </TextBlockContainer>
         </Container>
-        <div className="absolute top-5 right-10 float">
-          {/* <Image
-            src={Shark}
-            alt="Rhyze Pinacolada"
-            width={130}
+        <div className="absolute top-5 right-[10%] float opacity-50 md:opacity-100">
+          <Image
+            src={Beachball}
+            alt="Rhyze Beachball"
+            width={80}
             className="scale-x-[-1]"
-          /> */}
+          />
         </div>
-        <div className="absolute top-[50%] md:left-10 w-[150px] md:w-auto float">
-          {/* <Image src={SharkTerry} alt="Rhyze Pinacolada" width={330} /> */}
+        <div className="absolute top-[50%] md:left-[15%] w-[85px] md:w-auto float opacity-50 md:opacity-100">
+          <Image src={Flippers} alt="Beach Flippers" width={85} />
         </div>
-        <div className="absolute bottom-0 right-0 w-[200px] md:w-auto">
-          <Image src={Reef} alt="Rhyze Pinacolada" width={430} />
+        <div className="absolute bottom-0 right-0 w-[200px] md:w-auto opacity-50 md:opacity-100">
+          <Image src={Reef} alt="Rhyze Reef" width={430} />
         </div>
       </Section>
     </>

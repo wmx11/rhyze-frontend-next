@@ -73,6 +73,44 @@ nav {
   }
 }
 
+@keyframes blow_in_wind_1 {
+  0% {
+    transform: rotate(15deg);
+  }
+  25% {
+    transform: rotate(16deg);
+  }
+  50% {
+    transform:  rotate(14deg);
+  }
+  100% {
+    transform: rotate(15deg);
+  }
+}
+
+@keyframes blow_in_wind_2 {
+  0% {
+    transform: rotate(-25deg);
+  }
+  25% {
+    transform: rotate(-24deg);
+  }
+  50% {
+    transform:  rotate(-26deg);
+  }
+  100% {
+    transform: rotate(-25deg);
+  }
+}
+
+.blow_in_wind {
+  animation: blow_in_wind_1 7s ease infinite;
+}
+
+.blow_in_wind_2 {
+  animation: blow_in_wind_2 7s ease infinite;
+}
+
 .float {
   animation: float 7s ease infinite;
 
@@ -97,4 +135,11 @@ nav {
 .th-button {
   border-radius: var(--border-radius) !important;
   margin-bottom: 8px !important;
+}
+
+// Override TW Connect Wallet
+.tw-connected-wallet, .tw-connect-wallet {
+  background: hsl(var(--dark-wet-sand)) !important;
+  color: #fff !important;
+  border-radius: var(--border-radius) !important;
 }
