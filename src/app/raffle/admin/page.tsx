@@ -1,7 +1,8 @@
+import RaffleAdminPage from '@/app/views/raffle/raffle-admin/RaffleAdminPage';
 import React from 'react';
 
 export const RaffleAdmin = () => {
-  return <div>RaffleAdmin</div>;
+  return <RaffleAdminPage />;
 };
 
 export default RaffleAdmin;

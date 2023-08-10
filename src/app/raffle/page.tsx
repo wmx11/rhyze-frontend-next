@@ -1,9 +1,8 @@
-import React from 'react'
+import React from 'react';
+import RafflePage from '../views/raffle/RafflePage';
 
 const Raffle = () => {
-  return (
-    <div>page</div>
-  )
-}
+  return <RafflePage />;
+};
 
-export default Raffle
+export default Raffle;

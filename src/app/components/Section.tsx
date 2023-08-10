@@ -1,7 +1,7 @@
-import React, { FC, PropsWithChildren } from 'react';
+import React, { BaseHTMLAttributes, FC, PropsWithChildren } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-const Section: FC<PropsWithChildren & HTMLBaseElement> = ({
+const Section: FC<PropsWithChildren & BaseHTMLAttributes<HTMLBaseElement>> = ({
   children,
   className,
   id,
