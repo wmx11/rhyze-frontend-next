@@ -3,6 +3,9 @@ import { Nunito } from 'next/font/google';
 import Footer from './components/Footer';
 import Navigation from './components/Navigation';
 import './globals.scss';
+import { Web3Provider } from './components/Web3Provider';
+import { Polygon } from '@thirdweb-dev/chains';
+import { Toaster } from './ui/components/ui/toaster';
 
 const nunito = Nunito({
   subsets: ['latin'],
@@ -22,8 +25,15 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="bumblebee">
       <body className={nunito.className}>
-        <Navigation />
-        {children}
+        <Web3Provider
+          clientId="88912ba3a27fde3ae703949a155e7d85"
+          activeChain={Polygon}
+          supportedChains={[Polygon]}
+        >
+          <Navigation />
+          {children}
+          <Toaster />
+        </Web3Provider>
         <Footer />
       </body>
     </html>

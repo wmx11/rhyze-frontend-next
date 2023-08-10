@@ -1,17 +1,17 @@
 import H1 from '@/app/components/H1';
 import HeroWrapper from '@/app/components/HeroWrapper';
 import Image from 'next/image';
-import React from 'react';
 
-import RhyzeLogoOutline from '../../../../../public/assets/rhyze_logo_outline.png';
-import PalmTree from '../../../../../public/assets/palm_tree.png';
 import Countdown from '@/app/components/Countdown';
+import PalmTree from '../../../../../public/assets/palm_tree.png';
+import RhyzeLogoOutline from '../../../../../public/assets/rhyze_logo_outline.png';
+import Sunlounger from '../../../../../public/assets/sunlounger.png';
 
 const Hero = () => {
   return (
     <section className="relative overflow-hidden">
       <HeroWrapper className="justify-center items-center">
-        <div className="space-y-12 md:space-y-16 text-center flex flex-col">
+        <div className="space-y-12 md:space-y-16 text-center flex flex-col z-10">
           <div className="flex items-center justify-center z-10">
             <Image
               src={RhyzeLogoOutline}
@@ -31,15 +31,21 @@ const Hero = () => {
             Time: 14:00 UTC
           </p>
         </div>
+        <div className="hidden md:block absolute bottom-[0] left-[-20px] z-[1] opacity-80 scale-x-[-1]">
+          <Image src={Sunlounger} alt="Palm tree" width={320} />
+        </div>
+        <div className="md:block absolute bottom-[0] right-[-20px] z-[1] opacity-80 max-w-[120px] md:max-w-full">
+          <Image src={Sunlounger} alt="Palm tree" width={320} />
+        </div>
       </HeroWrapper>
-      <div className="hidden lg:block absolute top-[-15%] left-[-100%] rotate-[15deg] z-[1] animate-palm-1">
-        <Image src={PalmTree} alt="Palm tree" width={1300} />
+      <div className="lg:block absolute top-[-200px] md:top-[-100px] left-[-500px] rotate-[15deg] z-[1] blow_in_wind">
+        <Image src={PalmTree} alt="Palm tree" width={1000} />
       </div>
-      <div className="hidden lg:block absolute top-[-20%] lg:right-[-100%] rotate-[-25deg] z-[1] animate-palm-2">
+      <div className="lg:block absolute top-[-200px] md:top-[-100px] right-[-500px] rotate-[-25deg] z-[1] blow_in_wind_2">
         <Image
           src={PalmTree}
           alt="Palm tree"
-          width={1500}
+          width={1000}
           className="scale-x-[-1]"
         />
       </div>
