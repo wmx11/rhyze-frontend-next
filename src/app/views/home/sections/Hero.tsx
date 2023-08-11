@@ -6,6 +6,7 @@ import Countdown from '@/app/components/Countdown';
 import PalmTree from '../../../../../public/assets/palm_tree.png';
 import RhyzeLogoOutline from '../../../../../public/assets/rhyze_logo_outline.png';
 import Sunlounger from '../../../../../public/assets/sunlounger.png';
+import H2 from '@/app/components/H2';
 
 const Hero = () => {
   return (
@@ -20,7 +21,10 @@ const Hero = () => {
               className="w-[100px] md:w-auto"
             />
           </div>
-          <H1 className="md:text-7xl animate">Rhyze and Shine</H1>
+          <div className="space-y-4">
+            <H1 className="md:text-7xl animate">Welcome to Rhyze</H1>
+            <H2 className="animate">DeFi is looking up</H2>
+          </div>
           <div className="animate">
             <Countdown />
           </div>

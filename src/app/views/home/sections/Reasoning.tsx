@@ -15,25 +15,28 @@ const Reasoning = () => {
         <Container className="z-10 relative">
           <TextBlockContainer>
             <TextBlock h1="When and how can I buy Rhyze tokens?">
-              We will have a fair launch 🤝🚀 on/near August the 13th. The Rhyze
-              token will be launched on Polygon so get your MATIC and USDC ready
-              and remember to invite all your crypto friends from London to
-              Lagos, Tokyo to Timbuktu and everywhere beyond. Everyone’s
-              welcome. Let’s Rhyze together!
+              The Rhyze Fair Launch 🤝🚀 is on August the 13th at 2PM UTC right
+              here on the Rhyze website. The Rhyze token is on the Polygon
+              network, so get your MATIC (for fees) and USDC ready and remember
+              to invite all your crypto friends from London to Lagos, Tokyo to
+              Timbuktu and everywhere beyond. Everyone’s welcome. Let’s Rhyze
+              together!
             </TextBlock>
-            <TextBlock h1="Why is green chart a good thing?">
+            <TextBlock h1="Why a green chart a great thing?">
               Not everyone likes eating their veggies, but everybody loves a
-              green chart. Imagine those looking for a hot project seeing a
-              completely green chart on Dextools, Zerion, CoinGecko and more.
-              Excitement will follow and you will be right in the middle of it!
+              green chart. Imagine someone looking for a hot project and seeing
+              a completely green chart. Rhyze looks fantastic no matter when you
+              look at it. You can recommend this project to a friend, confident
+              they will only ever see a green chart. This project will always
+              sell itself. It will create a ton of excitement as people begin to
+              find out, and you will be right in the middle of it!
             </TextBlock>
-            <TextBlock>
-              In simple terms, when a token is going up, people get FOMO. Look
-              at PEPE, a token with no utility and no revenue, reaching almost a
-              $2BN market cap at the ATH. People kept buying PEPE because the
-              chart was green and it looked like it was never going to stop.
-              Well, with Rhyze, the price will literally never stop going up!
-              Imagine the potential!
+            <TextBlock h1="Can I lose money in Rhyze?">
+              There is unlimited upside for RHYZE and we have done our best to
+              limit the downside. Our dev team is experienced, and a third party
+              audits our contracts. Please note, there is always an inherent
+              risk when investing in DeFi, so please invest only what you are
+              comfortable with.
             </TextBlock>
           </TextBlockContainer>
         </Container>

@@ -7,7 +7,7 @@ const TextBlockContainer: FC<
   PropsWithChildren & BaseHTMLAttributes<HTMLBaseElement> & { size?: Size }
 > = ({ children, className, size = 'lg' }) => {
   const textBlockContainer = cva(
-    twMerge('text-white text-center space-y-32 max-w-xl mx-auto', className),
+    twMerge('text-white space-y-32 max-w-xl mx-auto', className),
     {
       variants: {
         size: {

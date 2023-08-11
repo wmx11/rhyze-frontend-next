@@ -25,6 +25,10 @@ const config: Config = {
         ring: 'hsl(var(--ring))',
         background: 'hsl(var(--secondary))',
         foreground: 'hsl(var(--primary))',
+        destructive: {
+          DEFAULT: 'hsl(var(--rhyze-red))',
+          foreground: 'hsl(var(--destructive-foreground))',
+        },
       },
       borderRadius: {
         lg: 'var(--border-radius)',

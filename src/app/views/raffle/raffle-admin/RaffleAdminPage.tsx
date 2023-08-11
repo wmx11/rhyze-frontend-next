@@ -46,8 +46,8 @@ const RaffleAdminPage = () => {
 
   return (
     <div>
-      <Stats />
       <Controls />
+      <Stats />
       <Charts />
     </div>
   );

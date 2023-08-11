@@ -16,10 +16,21 @@ const Benefits = () => {
         <Container>
           <div className="flex flex-col md:flex-row md:justify-between gap-8">
             <div className="flex-1 space-y-16 text-white">
+              <TextBlock h2="Simple Buy & Earn Strategy">
+                No staking is required. Purchase the token, sit back and watch
+                it Rhyze. Both the RHYZE price and the total USDC value of the
+                Rhyze in your wallet can only go up.
+              </TextBlock>
+              <TextBlock h2="Fair and Transparent">
+                No team tokens, presales, private sales, token dumps or token
+                lockups. We promise to be transparent and fair in everything we
+                do.
+              </TextBlock>
               <TextBlock h2="100% Backed">
-                Every $RHYZE token purchased is minted and every token sold is
-                burned keeping $RHYZE 100% backed. A portion of the mint and
-                redeem fees back the token and price always goes up!
+                We don’t use a traditional Liquidity Pool. Instead, every RHYZE
+                token purchased is minted, and every token sold is burned,
+                keeping RHYZE 100% backed. A portion of the mint and redeem fees
+                back the token, and the price always goes up!
               </TextBlock>
               <TextBlock h2="Fee Mechanics">
                 <p>
@@ -45,11 +56,6 @@ const Benefits = () => {
                   2.5% Treasury
                 </p>
               </TextBlock>
-              <TextBlock h2="Old Rebasing VS Rhyze">
-                Every $RHYZE token purchased is minted and every token sold is
-                burned keeping $RHYZE 100% backed. A portion of the mint and
-                redeem fees back the token and price always goes up!
-              </TextBlock>
             </div>
             <div className="flex-1 flex items-center">
               <Image
@@ -61,15 +67,20 @@ const Benefits = () => {
             <div className="flex-1 space-y-16 text-white">
               <TextBlock h2="Push - Pull Rebasing">
                 Rhyze utilizes a breakthrough push-pull rebasing strategy to
-                ensure consistent equilibrium for the token.
+                ensure consistent equilibrium for the token. Whenever Rhyze
+                rebases, the price will go up.
               </TextBlock>
-              <TextBlock h2="Treasury">
-                50% of the treasury will fund investments. Returns will be
-                injected weekly to back the $RHYZE token increasing its price.
+              <TextBlock h2="Diversified Investments">
+                A significant portion of the taxes goes to a diversified
+                investment fund. All profits will be periodically injected back
+                into Rhyze, increasing the price.
               </TextBlock>
-              <TextBlock h2="Whale Proof">
-                Our audited mechanics protect the community against whale buys
-                or sells. Fees directly support the project.
+              <TextBlock h2="Whale Proof Community">
+                It doesn’t matter whether you’re the first or the 10000th buyer,
+                nobody can dump the price of RHYZE and leave you as a bagholder.
+                With Rhyze, all buys or sells push the price up and benefit the
+                community as a whole. Rhyze is the first DeFi token where you
+                aren’t afraid of your fellow investors!
               </TextBlock>
             </div>
           </div>

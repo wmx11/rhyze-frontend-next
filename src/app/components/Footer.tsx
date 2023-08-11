@@ -34,14 +34,6 @@ const Footer = () => {
           </div>
         </Container>
       </Section>
-      <div className="flex justify-center w-full py-24 md:py-4 text-sm">
-        <div>
-          Built with love by{' '}
-          <a href="https://modiggo.com" target="_blank">
-            Modiggo
-          </a>
-        </div>
-      </div>
     </footer>
   );
 };

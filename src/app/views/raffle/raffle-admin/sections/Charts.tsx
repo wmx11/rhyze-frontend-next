@@ -75,14 +75,14 @@ const Charts = () => {
     <Section>
       <Container>
         <H1 className="text-center mb-16">Raffle Charts</H1>
-        <div className="grid grid-cols md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <Card>
+        <div className="grid grid-cols md:grid-cols-2 gap-8">
+          <Card className="min-h-[320px]">
             <Line data={highestPayoutsData} options={chartOptions} />
           </Card>
-          <Card>
+          <Card className="min-h-[320px]">
             <Line data={ticketPricesVSTicketSalesData} options={chartOptions} />
           </Card>
-          <Card>
+          <Card className="min-h-[320px]">
             <Line data={numberOfParticipantsData} options={chartOptions} />
           </Card>
         </div>

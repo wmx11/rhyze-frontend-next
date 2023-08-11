@@ -23,7 +23,7 @@
   --dark-sand: 29 44% 74%;
   --dark-ocean: var(--primary);
   --light-ocean: var(--accent);
-  --rhyze-red: 0 100% 41%;
+  --rhyze-red: 0 89% 65%;
   --dark-wet-sand: var(--content);
 }
 
@@ -172,4 +172,5 @@ nav {
   background: hsl(var(--dark-wet-sand)) !important;
   color: #fff !important;
   border-radius: var(--border-radius) !important;
+  padding: 1rem !important;
 }
