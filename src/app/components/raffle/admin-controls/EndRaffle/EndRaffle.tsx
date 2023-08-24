@@ -104,11 +104,7 @@ const EndRaffle = () => {
         )}
         <button
           className="btn btn-warning btn-block"
-          disabled={
-            isLoading ||
-            (isAutomated &&
-              (isLoadingNumberOfWinners || isLoadingNumberOfTickets))
-          }
+          disabled={isLoading}
           onClick={handleEndRaffle}
         >
           {isLoading && <span className="loading loading-ring"></span>}

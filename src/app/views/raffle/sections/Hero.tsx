@@ -5,7 +5,7 @@ import Cocktail from '../../../../../public/assets/cocktail.png';
 import Cocktail2 from '../../../../../public/assets/coconut_drink.png';
 import Sunlounger from '../../../../../public/assets/sunlounger.png';
 
-import EnterRaffleModal from '@/app/components/raffle/EnterRaffleModal';
+import EnterRaffleCard from '@/app/components/raffle/EnterRaffleCard';
 import RafflePieChart from '@/app/components/raffle/RafflePieChart';
 import RaffleUserStats from '@/app/components/raffle/RaffleUserStats';
 import Image from 'next/image';
@@ -25,7 +25,9 @@ const Hero = () => {
             <H1 className="animate !text-7xl z-10 relative">
               Catch the raffle wave!
             </H1>
-            <EnterRaffleModal />
+
+            <EnterRaffleCard />
+
             <div className="absolute top-0 left-0 animate float max-w-[120px] md:max-w-full">
               <Image
                 src={Cocktail}

@@ -6,10 +6,6 @@ import { web3config } from '@/app/utils/web3/config';
 export const useRhyzeRaffleContract = () => {
   const chainId = useChainId();
 
-  if (!chainId) {
-    console.error('Chain ID not provided');
-  }
-
   const contractAddress =
     web3config.getContractByChainId(chainId)?.rhyzeRaffle?.address;
 
@@ -24,10 +20,6 @@ export const useRhyzeRaffleContract = () => {
 
 export const useRhyzeTokenContract = () => {
   const chainId = useChainId();
-
-  if (!chainId) {
-    console.error('Chain ID not provided');
-  }
 
   const contractAddress =
     web3config.getContractByChainId(chainId)?.rhyzeToken?.address;

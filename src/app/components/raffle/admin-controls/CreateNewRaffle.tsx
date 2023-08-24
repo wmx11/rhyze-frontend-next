@@ -1,6 +1,6 @@
 import { useRhyzeRaffleContractWrite } from '@/app/hooks/web3/useRhyzeRaffle';
 import { RAFFLE_CREATE_NEW_RAFFLE } from '@/app/utils/web3/constants';
-import { toBigNumber } from '@/app/utils/web3/utils';
+import { ethers } from 'ethers';
 import { useState } from 'react';
 
 const CreateNewRaffle = () => {
@@ -11,14 +11,14 @@ const CreateNewRaffle = () => {
 
   const { mutateAsync, isLoading } = useRhyzeRaffleContractWrite({
     method: RAFFLE_CREATE_NEW_RAFFLE,
-  });
+  });  
 
   const handleCreateNewRaffle = () => {
     // [_price, _minimumPot, _numberOfWinners, _multiWinOption]
     mutateAsync({
       args: [
-        toBigNumber(price).toString(),
-        toBigNumber(minPot).toString(),
+        ethers.utils.parseUnits(price.toString()).toString(),
+        ethers.utils.parseUnits(minPot.toString()).toString(),
         numberOfWinners.toString(),
         canWinMultipleTimes.toString(),
       ],
