@@ -11,3 +11,9 @@ export const toBigNumber = (number: number, decimalPlaces?: number) =>
 
 export const fromBigNumberToSafeNumber = (bigNumber: BigNumber) =>
   bigNumber ? bigNumber.div(BIG_DECIMALS).toNumber() : 0;
+
+export const getRandomNumber = (min: number, max: number) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+};

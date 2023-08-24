@@ -8,7 +8,7 @@ const Stats = () => {
     <Section>
       <Container>
         <H1 className="text-center mb-16">Raffle Stats</H1>
-        <div className="grid grid-cols md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols md:grid-cols-2 gap-8">
           <Card>
             <CardHeader>Current Players</CardHeader>
             <div>0x...</div>

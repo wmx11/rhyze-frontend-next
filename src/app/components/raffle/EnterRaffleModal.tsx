@@ -1,3 +1,5 @@
+import { useRhyzeTokenAllowance } from '@/app/hooks/web3/useAllowance';
+import { useRhyzeRaffleContractWrite } from '@/app/hooks/web3/useRhyzeRaffle';
 import {
   Dialog,
   DialogContent,
@@ -6,14 +8,15 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/app/ui/components/ui/dialog';
-import React, { useEffect, useState } from 'react';
-import H2 from '../H2';
-import { ConnectWallet, useAddress, useChainId } from '@thirdweb-dev/react';
-import { useRhyzeTokenAllowance } from '@/app/hooks/web3/useAllowance';
 import { web3config } from '@/app/utils/web3/config';
-import { toast } from '@/app/ui/components/ui/use-toast';
+import {
+  DEFAULT_ALLOWANCE,
+  RAFFLE_MINT_TICKETS,
+} from '@/app/utils/web3/constants';
 import { toBigNumber } from '@/app/utils/web3/utils';
-import { DEFAULT_ALLOWANCE } from '@/app/utils/web3/constants';
+import { ConnectWallet, useAddress, useChainId } from '@thirdweb-dev/react';
+import { useState } from 'react';
+import H2 from '../H2';
 
 const EnterRaffleModal = () => {
   const userAddress = useAddress();
@@ -22,26 +25,20 @@ const EnterRaffleModal = () => {
   const {
     spender,
     rhyzeTokenAllowance,
-    isLoadingRead,
-    isLoadingWrite,
-    errorWrite,
+    isLoadingReadAllowance,
+    isLoadingWriteApprove,
     approve,
   } = useRhyzeTokenAllowance({
     userAddress,
     spender: web3config.getContractByChainId(chainId)?.rhyzeRaffle.address,
   });
 
-  const [ticketAmount, setTicketAmount] = useState(1);
+  const { mutateAsync: mint, isLoading: isLoadingMintTickets } =
+    useRhyzeRaffleContractWrite({
+      method: RAFFLE_MINT_TICKETS,
+    });
 
-  useEffect(() => {
-    if (errorWrite) {
-      toast({
-        variant: 'destructive',
-        title: 'Error',
-        description: errorWrite?.toString(),
-      });
-    }
-  }, [errorWrite]);
+  const [ticketAmount, setTicketAmount] = useState(1);
 
   const handleOnChange = (value: string) => {
     const number = parseInt(value, 10);
@@ -60,8 +57,16 @@ const EnterRaffleModal = () => {
     setTicketAmount(number);
   };
 
-  const handleBuyTickets = () => {
-    console.log(ticketAmount);
+  const handleApproveContract = () => {
+    approve({
+      args: [spender, toBigNumber(DEFAULT_ALLOWANCE).toString()],
+    });
+  };
+
+  const handleMintTickets = () => {
+    mint({
+      args: [ticketAmount.toString()],
+    });
   };
 
   const renderRaffleButtons = () => {
@@ -73,24 +78,25 @@ const EnterRaffleModal = () => {
       return (
         <button
           className="btn btn-primary text-white"
-          disabled={isLoadingRead || isLoadingWrite}
-          onClick={async () => {
-            approve({
-              args: [spender, toBigNumber(DEFAULT_ALLOWANCE).toString()],
-            });
-          }}
+          disabled={isLoadingReadAllowance || isLoadingWriteApprove}
+          onClick={handleApproveContract}
         >
-          {isLoadingRead || isLoadingWrite ? (
-            <span className="loading loading-ring"></span>
-          ) : (
-            'Approve Contract'
-          )}
+          {isLoadingReadAllowance ||
+            (isLoadingWriteApprove && (
+              <span className="loading loading-ring"></span>
+            ))}
+          Approve Contract
         </button>
       );
     }
 
     return (
-      <button className="btn btn-primary text-white" onClick={handleBuyTickets}>
+      <button
+        className="btn btn-primary text-white"
+        disabled={isLoadingMintTickets}
+        onClick={handleMintTickets}
+      >
+        {isLoadingMintTickets && <span className="loading loading-ring"></span>}
         Buy Tickets
       </button>
     );
@@ -126,6 +132,7 @@ const EnterRaffleModal = () => {
                     </span>
                   </label>
                   <input
+                    disabled={rhyzeTokenAllowance <= 0}
                     value={ticketAmount}
                     onChange={(e) => handleOnChange(e.currentTarget.value)}
                     type="number"

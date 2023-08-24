@@ -2,6 +2,8 @@ import { ALLOWANCE, APPROVE } from '@/app/utils/web3/constants';
 import { useContractRead, useContractWrite } from '@thirdweb-dev/react';
 import { useRhyzeTokenContract } from './useContract';
 import { fromBigNumberToSafeNumber } from '@/app/utils/web3/utils';
+import { useEffect } from 'react';
+import { toast } from '@/app/ui/components/ui/use-toast';
 
 type UseRhyzeTokenAllowanceProps = {
   userAddress?: string;
@@ -17,24 +19,36 @@ export const useRhyzeTokenAllowance = ({
   // [owner, spender]
   const {
     data: rhyzeTokenAllowance,
-    isLoading: isLoadingRead,
-    error: errorRead,
+    isLoading: isLoadingReadAllowance,
+    error: errorReadAllowance,
   } = useContractRead(rhyzeTokenContract, ALLOWANCE, [userAddress, spender]);
 
-  //
   const {
     mutateAsync: approve,
-    isLoading: isLoadingWrite,
-    error: errorWrite,
+    isLoading: isLoadingWriteApprove,
+    error: errorWriteApprove,
   } = useContractWrite(rhyzeTokenContract, APPROVE);
+
+  useEffect(() => {
+    if (errorReadAllowance || errorWriteApprove) {
+      toast({
+        variant: 'destructive',
+        title: 'Error',
+        description: [
+          errorReadAllowance?.toString() || '',
+          errorWriteApprove?.toString() || '',
+        ].join(', '),
+      });
+    }
+  }, [errorReadAllowance, errorWriteApprove]);
 
   return {
     spender,
     rhyzeTokenAllowance: fromBigNumberToSafeNumber(rhyzeTokenAllowance),
-    isLoadingRead,
-    errorRead,
+    isLoadingReadAllowance,
+    errorReadAllowance,
     approve,
-    isLoadingWrite,
-    errorWrite,
+    isLoadingWriteApprove,
+    errorWriteApprove,
   };
 };
