@@ -2,6 +2,7 @@ import { useRhyzeTokenAllowance } from '@/app/hooks/web3/useAllowance';
 import { useRhyzeRaffleContractWrite } from '@/app/hooks/web3/useRhyzeRaffle';
 import { web3config } from '@/app/utils/web3/config';
 import {
+  CHAIN_ID_POLYGON,
   DEFAULT_ALLOWANCE,
   RAFFLE_MINT_TICKETS,
 } from '@/app/utils/web3/constants';
@@ -65,6 +66,10 @@ const EnterRaffleModal = () => {
   };
 
   const renderRaffleButtons = () => {
+    if (chainId !== CHAIN_ID_POLYGON) {
+      return <p className="font-bold">Make sure you are on Polygon network</p>;
+    }
+
     if (rhyzeTokenAllowance <= 0) {
       return (
         <button

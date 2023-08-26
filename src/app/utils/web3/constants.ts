@@ -1,6 +1,8 @@
 // GENERAL CONSTANTS
 export const DECIMALS = 18;
 export const DEFAULT_ALLOWANCE = 10000000000;
+export const CHAIN_ID_POLYGON = 137;
+export const CHAIN_ID_POLYGON_MUMBAI = 8001;
 
 export const APPROVE = 'approve';
 export const ALLOWANCE = 'allowance';
@@ -23,3 +25,9 @@ export const RAFFLE_GET_PRICE_PER_TICKET = 'getPricePerTicket';
 export const RAFFLE_GET_NUMBER_OF_WINNERS = 'getNumberWinners';
 export const RAFFLE_GET_NUMBER_OF_ENTRIES = 'getNumberEntries';
 export const RAFFLE_GET_WINNERS_PAYOUTS = 'getWinnersPayouts';
+export const RAFFLE_GET_PRIZE_GRADIENT = 'getPrizeGradient';
+export const RAFFLE_GET_POT_FUNDS = 'getPotFunds';
+
+// RHYZE TOKEN CONSTANTS
+// --- Getters ---
+export const RHYZE_GET_PRICE = 'sevenUpPriceInStablecoins';

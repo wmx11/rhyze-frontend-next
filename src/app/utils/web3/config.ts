@@ -1,9 +1,8 @@
-const POLYGON = 137;
-const POLYGON_MUMBAI = 8001;
+import { CHAIN_ID_POLYGON, CHAIN_ID_POLYGON_MUMBAI } from './constants';
 
 export const web3config = {
   contracts: {
-    [POLYGON]: {
+    [CHAIN_ID_POLYGON]: {
       rhyzeRaffle: {
         address: '0xBf55A3B212fA9914d8dbC61C494Aa8274Ea5bdA2',
         decimals: 18,
@@ -18,7 +17,7 @@ export const web3config = {
         symbol: 'USDC',
       },
     },
-    [POLYGON_MUMBAI]: {
+    [CHAIN_ID_POLYGON_MUMBAI]: {
       rhyzeRaffle: {
         address: '0x2D363Da46691b58621A50DF14286b50642f03577',
         decimals: 18,

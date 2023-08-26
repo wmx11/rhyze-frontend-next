@@ -76,9 +76,9 @@ const RaffleUserStats = () => {
           Your chances to win the Mega Jackpot are{' '}
           <strong>
             {calculateWinningsProbabilityMegaJackpot(
-              parseFloat(ethers.utils.formatUnits(numberOfUserTickets || 0)),
-              parseFloat(ethers.utils.formatUnits(numberOfTickets || 0)),
-              parseFloat(ethers.utils.formatUnits(numberOfWinners || 0))
+              parseInt(ethers.utils.formatUnits(numberOfUserTickets || 0), 10),
+              parseInt(ethers.utils.formatUnits(numberOfTickets || 0), 10),
+              parseInt(ethers.utils.formatUnits(numberOfWinners || 0), 10)
             )}
             %
           </strong>
@@ -90,9 +90,9 @@ const RaffleUserStats = () => {
           You have a{' '}
           <strong>
             {calculateWinningsProbability(
-              parseFloat(ethers.utils.formatUnits(numberOfUserTickets || 0)),
-              parseFloat(ethers.utils.formatUnits(numberOfTickets || 0)),
-              parseFloat(ethers.utils.formatUnits(numberOfWinners || 0))
+              parseInt(ethers.utils.formatUnits(numberOfUserTickets || 0), 10),
+              parseInt(ethers.utils.formatUnits(numberOfTickets || 0), 10),
+              parseInt(ethers.utils.formatUnits(numberOfWinners || 0), 10)
             )}
             %
           </strong>{' '}
